@@ -1,0 +1,72 @@
+{
+  "name": "rxjs-react",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "rxjs-react/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/rxjs-react"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rxjs-react:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rxjs-react:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "rxjs-react:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rxjs-react:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rxjs-react:build:development"
+        },
+        "production": {
+          "buildTarget": "rxjs-react:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../coverage/rxjs-react"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["rxjs-react/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

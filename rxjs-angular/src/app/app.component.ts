@@ -35,6 +35,9 @@ import {RouterModule} from '@angular/router';
         <li>
           <a routerLink="/dnd">Drag and Drop</a>
         </li>
+        <li>
+          <a routerLink="/redux">Redux</a>
+        </li>
       </ul>
     </nav>
     <router-outlet/>

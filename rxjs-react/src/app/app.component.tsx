@@ -34,6 +34,9 @@ export function AppComponent() {
           <li>
             <Link to="/dnd">Drag and Drop</Link>
           </li>
+          <li>
+            <Link to="/redux">Redux</Link>
+          </li>
         </ul>
       </nav>
       <RouterOutlet/>

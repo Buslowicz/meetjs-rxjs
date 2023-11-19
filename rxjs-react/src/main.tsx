@@ -5,6 +5,7 @@ import {BrowserRouter, Route, RouteProps, Routes} from 'react-router-dom';
 import {AppComponent} from './app/app.component';
 import {DndComponent} from './app/dnd.component';
 import {DraggableComponent} from './app/draggable.component';
+import {FetchingComponent} from './app/fetching.component';
 import {ReduxComponent} from './app/redux.component';
 
 const routes: Array<RouteProps> = [
@@ -19,6 +20,10 @@ const routes: Array<RouteProps> = [
   {
     path: 'redux',
     element: <ReduxComponent/>
+  },
+  {
+    path: 'fetching-data',
+    element: <FetchingComponent/>
   }
 ];
 

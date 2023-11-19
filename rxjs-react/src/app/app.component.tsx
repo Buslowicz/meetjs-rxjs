@@ -37,6 +37,9 @@ export function AppComponent() {
           <li>
             <Link to="/redux">Redux</Link>
           </li>
+          <li>
+            <Link to="/fetching-data">Fetching data</Link>
+          </li>
         </ul>
       </nav>
       <RouterOutlet/>

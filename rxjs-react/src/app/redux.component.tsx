@@ -1,5 +1,5 @@
 import {configureStore} from '@buslowicz/shared';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import styled from 'styled-components';
 
 type Increment = { type: 'increment' };
@@ -22,16 +22,16 @@ const Wrapper = styled.div`
 
 export function ReduxComponent() {
   const [count, setCount] = useState(0);
-  const store = useRef(configureStore(reducer, 0));
+  const store = useMemo(() => configureStore(reducer, 0), []);
 
-  const increment = () => store.current.dispatch({type: 'increment'});
-  const decrement = () => store.current.dispatch({type: 'decrement'});
+  const increment = () => store.dispatch({type: 'increment'});
+  const decrement = () => store.dispatch({type: 'decrement'});
 
   useEffect(() => {
-    const {state$} = store.current;
+    const {state$} = store;
     const subscription = state$.subscribe(setCount);
     return () => subscription.unsubscribe();
-  }, [store.current]);
+  }, [store]);
 
   return (
     <Wrapper>

@@ -38,6 +38,9 @@ import {RouterModule} from '@angular/router';
         <li>
           <a routerLink="/redux">Redux</a>
         </li>
+        <li>
+          <a routerLink="/fetching-data">Fetching data</a>
+        </li>
       </ul>
     </nav>
     <router-outlet/>

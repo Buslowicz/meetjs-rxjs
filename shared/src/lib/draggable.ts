@@ -1,9 +1,6 @@
-import {animationFrameScheduler, finalize, fromEvent, map, switchMap, takeUntil, tap, throttleTime} from "rxjs";
+import {animationFrameScheduler, finalize, fromEvent, map, switchMap, takeUntil, tap, throttleTime} from 'rxjs';
 
-export function createDragHandler(element: HTMLDivElement, callback: (position: {
-  dx: number,
-  dy: number
-}) => void) {
+export function createDragHandler(element: HTMLDivElement, callback: (position: { dx: number, dy: number }) => void) {
   return fromEvent<PointerEvent>(element, 'pointerdown').pipe(
     switchMap(({screenX: startX, screenY: startY}) => {
       let transform = [0, 0];

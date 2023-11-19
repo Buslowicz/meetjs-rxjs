@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import {createDragHandler} from '@buslowicz/shared';
 
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 export function DraggableComponent() {
-  const [position, setPosition] = React.useState({x: 20, y: 20});
+  const [position, setPosition] = useState({x: 20, y: 20});
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

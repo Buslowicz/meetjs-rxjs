@@ -3,12 +3,17 @@ import * as ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route, RouteProps, Routes} from 'react-router-dom';
 
 import {AppComponent} from './app/app.component';
+import {DndComponent} from './app/dnd.component';
 import {DraggableComponent} from './app/draggable.component';
 
 const routes: Array<RouteProps> = [
   {
     path: 'draggable',
     element: <DraggableComponent/>
+  },
+  {
+    path: 'dnd',
+    element: <DndComponent/>
   }
 ];
 

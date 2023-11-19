@@ -38,6 +38,6 @@ export class DraggableComponent {
     };
     toSignal(this.#ref$.pipe(
       switchMap(element => createDragHandler(element, updatePosition))
-    ))
+    ));
   }
 }

@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   nav > ul {
     list-style: none;
     padding: 0;
+    margin-bottom: 0;
   }
 
   nav > ul > li {
@@ -29,6 +30,9 @@ export function AppComponent() {
           </li>
           <li>
             <Link to="/draggable">Draggable</Link>
+          </li>
+          <li>
+            <Link to="/dnd">Drag and Drop</Link>
           </li>
         </ul>
       </nav>

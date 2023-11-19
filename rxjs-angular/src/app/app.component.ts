@@ -10,6 +10,7 @@ import {RouterModule} from '@angular/router';
     nav > ul {
       list-style: none;
       padding: 0;
+      margin-bottom: 0;
     }
 
     nav > ul > li {
@@ -30,6 +31,9 @@ import {RouterModule} from '@angular/router';
         </li>
         <li>
           <a routerLink="/draggable">Draggable</a>
+        </li>
+        <li>
+          <a routerLink="/dnd">Drag and Drop</a>
         </li>
       </ul>
     </nav>

@@ -42,8 +42,8 @@ export function dndHandler(element: HTMLElement, callback: (item: HTMLElement) =
         throttleTime(0, animationFrameScheduler),
         map(({screenX, screenY}) => ({dx: screenX - startX, dy: screenY - startY})),
         tap(({dx, dy}) => {
-          translate = [dx, dy];
           clone.style.setProperty('transform', `translate(${dx}px, ${dy}px)`);
+          translate = [dx, dy];
         }),
         finalize(() => {
           clone.remove();

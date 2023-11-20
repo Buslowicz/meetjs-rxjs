@@ -48,9 +48,7 @@ export function refinePostsData(selectedUser$: Observable<string | null>, maxPos
   return pipe(
     map((posts: PostsApiResponse) => Object.values(posts).filter(value => typeof value !== 'string') as Post[]),
     combineLatestWith(users$ as Observable<Record<string, User>>),
-    map(([posts, users]) => posts.map(post => ({
-      ...post, user: users[post.userId],
-    }))),
+    map(([posts, users]) => posts.map(post => ({...post, user: users[post.userId]}))),
     combineLatestWith(selectedUser$, maxPosts$),
     map(([posts, selectedUser, maxPosts]) => posts
       .filter(post => !selectedUser || post.userId === selectedUser)

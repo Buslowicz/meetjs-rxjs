@@ -70,26 +70,17 @@ export function FetchingComponent() {
       <h1>Fetching</h1>
       <button onClick={reloadUsers}>Reload users</button>
       <button onClick={reloadPosts}>Reload posts</button>
-      <input type="range" value={maxPosts} min="1" max={postsCount}
-             onInput={({target}) => setMaxPosts((target as HTMLInputElement).valueAsNumber)}/>
+      <input type="range" value={maxPosts} min="1" max={postsCount} onInput={({target}) => setMaxPosts((target as HTMLInputElement).valueAsNumber)}/>
       <span>{maxPosts} / {postsCount}</span>
       <div className="lists">
         <ul className="users">
           <li>
             <button onClick={() => setSelectedUser(null)}>Reset user filter</button>
           </li>
-          {users.map(user => (
-            <li key={user.id} onClick={() => setSelectedUser(user.id)}>
-              {user.name}
-            </li>
-          ))}
+          {users.map(user => (<li key={user.id} onClick={() => setSelectedUser(user.id)}>{user.name}</li>))}
         </ul>
         <ul className="posts">
-          {posts.map(post => (
-            <li key={post.id}>
-              {post.title} (by {post.user.name})
-            </li>
-          ))}
+          {posts.map(post => (<li key={post.id}>{post.title} (by {post.user.name})</li>))}
         </ul>
       </div>
     </Wrapper>

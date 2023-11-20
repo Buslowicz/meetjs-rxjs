@@ -32,7 +32,7 @@ import {merge, Subject, switchMap} from 'rxjs';
     }
 
     li {
-      background-color: #eee;
+      border: 1px solid #eee;
       border-radius: 4px;
       width: 100px;
       height: 100px;

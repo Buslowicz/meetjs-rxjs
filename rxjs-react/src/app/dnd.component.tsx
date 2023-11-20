@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   }
 
   li {
-    background-color: #eee;
+    border: 1px solid #eee;
     border-radius: 4px;
     width: 100px;
     height: 100px;
@@ -75,18 +75,10 @@ export function DndComponent() {
     <Wrapper>
       <h1>Drag and drop</h1>
       <ul ref={listARef} data-drop-target="listARef">
-        {data.listA.map(item => (
-          <li key={item.id} id={item.id} data-draggable>
-            {item.name}
-          </li>
-        ))}
+        {data.listA.map(item => (<li key={item.id} id={item.id} data-draggable>{item.name}</li>))}
       </ul>
       <ul ref={listBRef} data-drop-target="listBRef">
-        {data.listB.map(item => (
-          <li key={item.id} id={item.id} data-draggable>
-            {item.name}
-          </li>
-        ))}
+        {data.listB.map(item => (<li key={item.id} id={item.id} data-draggable>{item.name}</li>))}
       </ul>
     </Wrapper>
   );

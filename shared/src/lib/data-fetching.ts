@@ -9,13 +9,15 @@ export function fetchData<DATA>(url: string, hashKey?: keyof DATA) {
     response$: reload.pipe(
       startWith(null),
       switchMap(() => fetch(url, {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then<DATA>(res => res.json())),
+          method: 'GET',
+          mode: 'cors',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then<DATA>(res => res.json())
+      ),
       simpleCache(url),
       hashKey ? distinctUntilKeyChanged(hashKey) : tap(),
       shareReplay(1),

@@ -11,7 +11,6 @@ import {
 } from '@buslowicz/shared';
 import {BehaviorSubject} from 'rxjs';
 
-
 @Component({
   selector: 'app-fetching',
   standalone: true,
@@ -44,22 +43,17 @@ import {BehaviorSubject} from 'rxjs';
     <h1>Fetching</h1>
     <button (click)="reloadUsers()">Reload users</button>
     <button (click)="reloadPosts()">Reload posts</button>
-    <input type="range" #maxPosts [value]="maxPosts$ | async" (input)="maxPosts$.next(maxPosts.valueAsNumber)" min="1"
-           [max]="postsCount$ | async">
+    <input type="range" #maxPosts [value]="maxPosts$ | async" (input)="maxPosts$.next(maxPosts.valueAsNumber)" min="1" [max]="postsCount$ | async">
     <span>{{maxPosts$ | async}} / {{postsCount$ | async}}</span>
     <div class="lists">
       <ul class="users">
         <li>
           <button (click)="selectedUser$.next(null)">Reset user filter</button>
         </li>
-        <li *ngFor="let user of users$ | async" (click)="selectedUser$.next(user.id)">
-          {{user.name}}
-        </li>
+        <li *ngFor="let user of users$ | async" (click)="selectedUser$.next(user.id)">{{user.name}}</li>
       </ul>
       <ul class="posts">
-        <li *ngFor="let post of posts$ | async">
-          {{post.title}} (by {{post.user.name}}))
-        </li>
+        <li *ngFor="let post of posts$ | async">{{post.title}} (by {{post.user.name}}))</li>
       </ul>
     </div>
   `,

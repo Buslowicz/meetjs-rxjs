@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   }
 
   nav > ul > li > a {
-    color: #1f2123;
+    color: #fbfbfb;
     text-decoration: none;
   }
 `;
